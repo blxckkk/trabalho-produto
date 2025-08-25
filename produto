@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct produto {
+    int cod;
+    char nome[50];
+    float preco;
+};
+
+int main() {
+    int n, i;
+
+    printf("Digite a quantidade de produtos: ");
+    scanf("%d", &n);
+
+    struct produto produtos[n];
+
+    for(i = 0; i < n; i++) {
+        printf("\nProduto %d\n", i+1);
+        printf("Codigo: ");
+        scanf("%d", &produtos[i].cod);
+
+    
+    
+        printf("Nome: ");
+        scanf(" %[^\n]", produtos[i].nome);
+        printf("Preco: ");
+        scanf("%f", &produtos[i].preco);
+    }
+
+    printf("\n--- Lista de Produtos ---\n");
+    for(i = 0; i < n; i++) {
+        printf("Codigo: %d\n", produtos[i].cod);
+        printf("Nome: %s\n", produtos[i].nome);
+        printf("Preco: %.2f\n", produtos[i].preco);
+        printf("---\n");
+    }
+
+    return 0;
+}
